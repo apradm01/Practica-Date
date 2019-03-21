@@ -2,18 +2,18 @@ package es.unileon.prg.date;
 
 /**
 *
-*@TODO arreglar errores de compilacion
+*
 *@version 0.999
 */
 
-/*public class Date {
+public class Date {
 
-	private int _day;
-	private int _month;
-	private int _year;
+	private int day;
+	private int month;
+	private int year;
 
 	public Date(int day, int month, int year) throws DateException{
-		this._year = year;
+		this.year = year;
 		this.setMonth(month); 
 		this.setDay(day);
 	}
@@ -22,19 +22,19 @@ package es.unileon.prg.date;
 			throw new DateException("Mes " + month + " no valido" +
 					" Valores posibles entre 1 y 12.");
 		} else {
-			this._month = month;
+			this.month = month;
 		}
 }
 	public void setDay(int day) throws DateException{
-		if (day < 1 || day > getDaysOfMonth(month)) {
+		if (day < 1 || day > getDaysOfMonth(this.month)) {
 			throw new DateException("Dia " + day + " no valido" + 
-					" Valores posibles entre 1 y "+getDaysOfMonth(month));
+					" Valores posibles entre 1 y "+getDaysOfMonth(this.month));
 		}
 		else {
-		this._day = day;
+		this.day = day;
 		}
-	}
-	private int DaysOfMonth(int month){
+}
+	private int getDaysOfMonth(int month){
 	int number = 0;
 	switch (month){
 	case 1: //next
@@ -53,10 +53,10 @@ package es.unileon.prg.date;
 	case 11: number = 30;
 	break;
 	}
-	}*/
-
+	return number;
+	}
 	public String toString() {
-		return this._day + "/" + this._month + "/" + this._year;
+		return this.day + "/" + this.month + "/" + this.year;
 	}
 
 }
