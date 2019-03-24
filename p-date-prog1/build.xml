@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 
-<project name="Clase date" basedir="." default="todo">
+<project name="Practica Date" basedir="." default="todo">
     <property name="src" value="src"/>
     <property name="classes" value="classes"/>
     <property name="conf" value="etc"/>
-	<property name="doc" value="doc"/>
 
-    <property name="paquetes" value="es.unileon.prg.date"/>
+    <property name="paquetes" value="es.unileon.prg.Date"/>
 
     <target name="clean">
       <delete dir="${classes}"/>
@@ -14,22 +13,17 @@
 
     <target name="compile" depends="clean">
       <mkdir dir="${classes}"/>
-      <mkdir dir="${conf}"/>
       <javac includeantruntime="false" srcdir="${src}" destdir="${classes}"/>
       <echo message="Compiling...done"/>
     </target>
-    <target name="run" depends="compile">
 
-      <java classname="es.unileon.prg.date.MainDate">
+    <target name="run" depends="compile">
+      <java classname="es.unileon.prg.Date.MainDate">
          <classpath>
               <pathelement path="${classes}"/>
          </classpath>
       </java>
     </target>
-	
-	<target name="doc" description="generate documentation">
-		<javadoc sourcepath="${src}" destdir="${documentation}"/>
-	</target>
 
     <target name="todo" depends="run"/>
 
